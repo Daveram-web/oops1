@@ -7,7 +7,7 @@ const db = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
+    database:process.env.DB_NAME
 }).promise();
 
 async function  checkConnection() {
@@ -16,6 +16,9 @@ async function  checkConnection() {
         console.log('The Db is Connected')
         connected.release()
     } catch (error) {
+        console.log(error);
+        
+        console.log('first', process.env.DB_NAME)
         console.log("The Db is not Connected");        
     }
     

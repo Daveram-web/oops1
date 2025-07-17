@@ -11,14 +11,14 @@ export abstract class BaseModel<T> {
 
   async getAll(): Promise<T[]> {
     let [row]: any = await db.query(
-      `SELECT * FROM ${this.tableName} WHERE s_delete = 0`
+      `SELECT * FROM ${this.tableName} `
     );
     return row.map(this.MaptoRow);
   }
 
   async getById(id: number): Promise<T | null> {
     let [row]: any = await db.query(
-      `SELECT * FROM ${this.tableName} WHERE s_delete = 0`
+      `SELECT * FROM ${this.tableName}`
     );
     return row.map(this.MaptoRow);
   }

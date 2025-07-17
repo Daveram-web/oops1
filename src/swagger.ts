@@ -6,7 +6,7 @@ const doc = {
     title: 'Movie Review API',
     description: 'API Documentation for Movie Review App',
   },
-  host: 'localhost:5000',
+  host: 'localhost:5004',
   schemes: ['http'],
   tags: [
     {

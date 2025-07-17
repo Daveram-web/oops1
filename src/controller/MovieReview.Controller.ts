@@ -7,8 +7,8 @@ const movieService = new MoviewReviewService();
 export class MovieController {
 
     getAllReviews: RequestHandler = async (req, res) => {
-    // #swagger.tags = ['Movie Reviews']
-    // #swagger.description = 'Get all movie reviews'
+  
+    console.log('res', res)
     try {
         const reviews = await movieService.getAll();
         return res.status(200).json({
