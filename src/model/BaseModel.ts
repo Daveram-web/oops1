@@ -18,14 +18,14 @@ export abstract class BaseModel<T> {
 
   async getById(id: number): Promise<T | null> {
     let [row]: any = await db.query(
-      `SELCT * FROM ${this.tableName} WHERE s_delete = 0`
+      `SELECT * FROM ${this.tableName} WHERE s_delete = 0`
     );
     return row.map(this.MaptoRow);
   }
 
   async deletes(id: number): Promise<T | boolean> {
     let [del]: any = await db.query(
-      `UPDATE ${this.tableName} SET s_delete = 1 `,
+      `UPDATE ${this.tableName} SET s_delete = 1 WHERE id = ? `,
       [id]
     );
 
