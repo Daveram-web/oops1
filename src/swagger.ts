@@ -9,14 +9,7 @@ const doc = {
   host: 'localhost:5004',
   schemes: ['http'],
   tags: [
-    {
-      name: 'Movie Reviews',
-      description: 'All Movie Review APIs',
-    },
-    {
-      name: 'Review',
-      description: 'All Movie Review APIs',
-    },
+    
   ],
 };
 

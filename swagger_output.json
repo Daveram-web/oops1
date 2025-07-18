@@ -7,22 +7,118 @@
   },
   "host": "localhost:5004",
   "basePath": "/",
-  "tags": [
-    {
-      "name": "Movie Reviews",
-      "description": "All Movie Review APIs"
-    },
-    {
-      "name": "Review",
-      "description": "All Movie Review APIs"
-    }
-  ],
   "schemes": [
     "http"
   ],
   "paths": {
     "/moviewReview/allReviews": {
       "get": {
+        "tags": [
+          "MovieReview"
+        ],
+        "summary": "Get all movie reviews",
+        "description": "Returns all non-deleted movie reviews",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/moviewReview/getById": {
+      "get": {
+        "tags": [
+          "MovieReview"
+        ],
+        "description": "Returns all non-deleted movie reviews",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "the user Id",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/moviewReview/getByIntrest": {
+      "post": {
+        "tags": [
+          "MovieReview"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "the user Id",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/create": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Send OTP to user email",
+        "description": "Send OTP for login or signup. Type \"1\" for signup, \"2\" for Forgot OTP",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "language_id",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "date_of_birth",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "gener_id",
+            "in": "formData",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/allUser": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "ALl the Users",
         "description": "",
         "responses": {
           "default": {
